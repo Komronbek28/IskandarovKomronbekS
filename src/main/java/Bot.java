@@ -22,8 +22,7 @@ public class Bot extends TelegramLongPollingBot{
     public void onUpdateReceived(Update update) {
 
         long UserChatId = update.getMessage().getChatId();
-        String u = String.valueOf(update.getMessage());
-
+        String u = update.getMessage().getText();
         String Text = "\uD83D\uDD17 Izlayapsiz, ammo topolmayapsiz\n" +
                 "\n" +
                 "@newlink_uz (https://t.me/+8EAg1KAVK1llNDFi) kanali - barcha foydalanuvchilar uchun cheksiz imkoniyatlar manzili. Kanal Sizga quyidagi afzalliklarni beradi:\n" +
@@ -38,7 +37,7 @@ public class Bot extends TelegramLongPollingBot{
 
         String PhotoParse = "D:\\Users\\HP\\IdeaProjects\\MathGame\\src\\IMG\\img.png";
 
-        if (u == "/start") {
+        if (u.equals("/start") ) {
             sendPhotoWithText(UserChatId, PhotoParse, Text);
         }
     }
